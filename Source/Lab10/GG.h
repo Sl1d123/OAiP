@@ -23,7 +23,7 @@ struct TSel
 	
 
 	
-	floaqqqqqqt** A = malloc(R * sizeof(float*));
+	float** A = malloc(R * sizeof(float*));
 	for (int i = 0; i < R; i++)
 	{
 		A[i] = (float*)malloc(C * sizeof(float*));
