@@ -2,59 +2,34 @@
 
 #include <iostream>
 #include <string>
-//#include <List>
-
+#include <fstream>
 
 using namespace std;
 
-
-//template<typename T>   //Шаблон для различных типов(T)
-class Lost
+class MyList
 {
 public:
 
-	Lost(string F);
+	MyList();
 
-	void Pushback(int data);			 //Метод для пуша данных в таблицу
-	void Delete(int key);
-	void PopFront();
-	int GenerateKey(int key);
-	void Menu();						 //Метод для выбора действий над таблицей(поиск,удаление)
+	void PushTable(int data[234][2],int key);			 //Метод для пуша данных в таблицу
+	void Delete(int key, int** Data,bool conf);
+	
+	int GetKey(int num) {  key = num % M;   return key; }
 	int GetSize() { return M_size; };    //Метод для пуша данных в таблицу
 	void SetSize(int M) { M_size = M; };   //Метод для пуша данных в таблицу
-	//void & operator[](const int index);  //Метод для пуша данных в таблицу
-	~Lost();
+	~MyList();
 
 public:
 	
 	string file;
-
+	const int M = 10;
 private:
 
-//	template<typename T>
-	class Node
-	{
-	public:
-
-		Node* pNext;
-		int data;
-
-		Node(int dataT(), Node* pNext = nullptr)
-		{
-			this->data = data;
-			this->pNext = pNext;
-		}
-
-		~Node()
-		{
-
-		}
-
-	};
-
 	int M_size;
-
-	 Node* head;
+	int key;
+	int **Node;
+	
 };
 
 

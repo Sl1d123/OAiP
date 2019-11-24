@@ -1,104 +1,78 @@
 #include "Hash.h"
 
 
-//template<typename T>
-Lost::Lost(string F)
+
+MyList::MyList()  //234
 {
-	file = F;
-	head = nullptr;
+	
+	MyList *phead = nullptr;
+    MyList *pNext = nullptr;
+	
+	//int **Node = (int**) new int [][2];
+
 
 };
 
-//template<typename T>
-void Lost::Menu()
+
+
+
+
+
+
+void MyList::PushTable(int data[234][2],int key)
 {
-	int choose=0;
-	cout << "Выберите действие";
-	cout << "\n 1 - поиск, 2 - добавление ,3 - удаление";
-	cin >> choose;
+	
 
-	switch (choose)
+	for(int i=0;i<234;i++)
 	{
-	case 1: break;
-	case 2: break;
-	case 3: break;
-	default:
-		break;
-	}
-
-}
-
-//template<typename T>
- int Lost::GenerateKey(int key)
-{
-	int Key = 0;
-	Key %= 10;
-
-	return Key;
-}
-
-
-
-//template<typename T>
-void Lost::Pushback(int data)
-{
-	if (head == nullptr)
-	{
-		//head = new Node<T>(data);
-	}
-	else
-	{
-		//Node<T>* current = this->head;
-
-		/*while ( current->pNext != nullptr)
+		if (i == key)
 		{
-			current = current->pNext;
-		}*/
-		//current->pNext = new Node<T>(data);  //Создание ноды новой
-
+			if (this->Node[i][1] == 0) //Проверка на колизию
+			{ 
+				Node[i][1] = data[i][1];
+				//this->Node[i][1] = data
+			} 
+			else 
+			{
+			//Добавление динамич ячейки
+			}
+			
+		}
 	}
-	this->SetSize(5);
-}
-
-
-//template<typename T>
-void Lost::PopFront()
-{
-	//Node<T> *temp = head;
-	head=head->pNext;
-	//delete temp;
-	M_size--;
-
 
 }
 
-//template<typename T>
-void Lost::Delete(int  key)
+void MyList::Delete(int key,int** Data,bool conf)
 {
+	
+	for (int i = 0; i < 10; i++)
+	{
+		if (Data[0][i] == key) 
+		{
+		//Тот ли мы нашли?
+			if (conf) {   ;}
+			else { /* Поиск */ ; }
+		}
+	
+	}
 
 	
 }
 
 
-//template<typename T>
-//int & Lost::operator[](const int index)
-//{
-//	int counter = 0;
-////	Node<T>* current = this->head;
-//
-//		//while (current != nullptr) //Проверка на наличие данных
-//		//{
-//		//	if (counter == index) { return current->data; } //Нашли 
-//		//
-//		//	current = current->pNext;
-//		//	counter++;
-//		//}
-//		
-//}
-
-
-//template<typename T>
-Lost::~Lost()
+for (int i = 0; i < 10; i++)
 {
-	//free(Node);
+	if (Data[0][i] == key)
+	{
+		//Тот ли мы нашли?
+		if (conf) { ; }
+		else { /* Поиск */; }
+	}
+
+}
+
+
+MyList::~MyList()
+{
+	free(Node);
 };
